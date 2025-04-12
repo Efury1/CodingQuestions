@@ -9,6 +9,77 @@ function toggleExplanation() {
     }
 }
 
+// Problem 1: Sum of Multiples of 3 or 5
+function toggleMultiplesExplanation() {
+    var explanation = document.getElementById("multiplesExplanation");
+    if (explanation.style.display === "none") {
+      explanation.style.display = "block";
+    } else {
+      explanation.style.display = "none";
+    }
+}
+
+// Problem 2: Fibonacci Sequence
+function toggleFibonacciExplanation() {
+    var explanation = document.getElementById("FibonacciExplanation");
+    if (explanation.style.display === "none") {
+        explanation.style.display = "block";
+    } else {
+        explanation.style.display = "none";
+    }
+}
+
+// Problem 3: Palindrome
+function togglePalindromeExplanation() {
+    var explanation = document.getElementById("PalindromicExplanation");
+    if (explanation.style.display === "none") {
+        explanation.style.display = "block";
+    } else {
+        explanation.style.display = "none";
+    }
+}
+
+// Problem 4: Smallest Number
+function toggleSmallestNumberExplanation() {
+    var explanation = document.getElementById("SmallestNumberExplanation");
+    if (explanation.style.display === "none") {
+        explanation.style.display = "block";
+    } else {
+        explanation.style.display = "none";
+    }
+}
+
+// Problem 5: Prime Numbers
+function togglePrimeNumberExplanation() {
+    var explanation = document.getElementById("PrimeNumberExplanation");
+    if (explanation.style.display === "none") {
+        explanation.style.display = "block";
+    } else {
+        explanation.style.display = "none";
+    }
+}
+
+// Problem 6: Grid
+function toggleGridExplanation() {
+    var explanation = document.getElementById("GridExplanation");
+    if (explanation.style.display === "none") {
+        explanation.style.display = "block";
+    } else {
+        explanation.style.display = "none";
+    }
+}
+
+// Problem 7: Triangle
+function toggleTriangleExplanation() {
+    var explanation = document.getElementById("TriangleExplanation");
+    if (explanation.style.display === "none") {
+        explanation.style.display = "block";
+    } else {
+        explanation.style.display = "none";
+    }
+}
+
+
 // This function calculates the sum of multiples of 3 or 5 below the input number
 function handleSumMultiples() {
     var input = parseInt(document.getElementById("input1").value); // Get input number
@@ -145,33 +216,61 @@ function largestPrimeFactor() {
 // Problem 4: Smallest number that is evenly divisible by all numbers from 1 to 20
 // This function finds the smallest number that is divisible by all numbers from 1 to 20
 function calculateSmallestNumber() {
-    var number = 2520;  // Start from 2520 (smallest number divisible by numbers from 1 to 10)
-    while (true) {
-      var divisible = true;
-      for (var i = 1; i <= 20; i++) {
-        if (number % i !== 0) {
-          divisible = false; // If any number doesn't divide evenly, break the loop
-          break;
+    var number = 2520;  // I'm starting with 2520 as it's the smallest number dibible by 1 thorugh 10
+    // While loop will continue until there is a valid number
+    while (true) { 
+      var divisible = true; // Because the current number is divisible by all numbers (might need to change this)
+      // Loop through all numbers from 1 to 20 to check if the current number is divisible  by each one
+      for (var divisor = 1; divisor <= 20; divisor++) {  
+        if (number % divisor !== 0) {
+          divisible = false;  // Mark as not divisible 
+          break; // Exit loop earlier since there is no need to check
         }
       }
       if (divisible) {
-        // If the number is divisible by all, display the result
-        document.getElementById("output4").innerText = "Smallest Multiple: " + number;
-        break;
+        return number;
       }
-      number += 2520; // Increase by 2520 (multiple of numbers 1 to 10)
+      number += 2520;
     }
 }
 
 // Add event listener to the button for Problem 4
-document.getElementById("calculateSmallestNumberButton").addEventListener("click", calculateSmallestNumber);
+document.getElementById("calculateSmallestNumberButton").addEventListener("click", function() {
+    var smallestNumber = calculateSmallestNumber(); // Get the result from the function
+    document.getElementById("solution4").innerText = "Smallest Multiple: " + smallestNumber; // Display the result
+});
 
 // Problem 4: Prime Numbers Button
-// Placeholder function for prime number calculations (could be expanded further)
 function calculatePrimeNumbers() {
-  // Logic for calculating prime numbers would go here
-}
-
+    const primeNumbers = [];
+    let currentNumber = 2;
+  
+    while (primeNumbers.length < 10001) {
+      let divisor = 2;
+  
+      // Check divisibility up to the square root of the current number
+      while (divisor <= Math.sqrt(currentNumber) && currentNumber % divisor !== 0) {
+        divisor++;
+      }
+  
+      // If divisor goes beyond the square root, it means no divisors were found (it’s prime)
+      if (divisor > Math.sqrt(currentNumber)) {
+        primeNumbers.push(currentNumber);
+      }
+  
+      // Move to the next number to check
+      currentNumber++;
+    }
+  
+    return primeNumbers;
+  }
+  
+  // Event listener to calculate when the button is clicked
+    document.getElementById("calculatePrimeNumbersButton").addEventListener("click", function() {
+    const primes = calculatePrimeNumbers();
+    document.getElementById("solution5").textContent = "The 10001st prime number is: " + primes[10000];
+  });
+  
 // Tab Switching Logic
 // This function handles the tab switching logic when the user clicks on different tabs
 document.addEventListener("DOMContentLoaded", function () {
