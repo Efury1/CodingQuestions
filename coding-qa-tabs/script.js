@@ -1,27 +1,34 @@
-// Problem 1: Sum of Multiples of 3 or 5
+// TOGGLE SECTION
+// PLEASE NOTE THERE IS ACCIDENTLY EXTRA TOGGLES THAT AREN'T BEING USED
+
 // This function toggles the visibility of the explanation for the Sum of Multiples problem
 function toggleExplanation() {
     var explanation = document.getElementById("multiplesExplanation");
+    // Check if the explanation is hidden (display = 'none')
+    // If it is, change it to 'block' to make it visible
     if (explanation.style.display === "none") {
-      explanation.style.display = "block";
+        explanation.style.display = "block";
     } else {
-      explanation.style.display = "none";
+        // If it's already visible, hide it by setting display to 'none'
+        explanation.style.display = "none";
     }
 }
 
-// Problem 1: Sum of Multiples of 3 or 5
+// Problem 1: Sum of Multiples of 3 or 5 toggle explanation
 function toggleMultiplesExplanation() {
     var explanation = document.getElementById("multiplesExplanation");
+    // Toggle visibility of the explanation section
     if (explanation.style.display === "none") {
-      explanation.style.display = "block";
+        explanation.style.display = "block"; // Show the explanation
     } else {
-      explanation.style.display = "none";
+        explanation.style.display = "none"; // Hide the explanation
     }
 }
 
-// Problem 2: Fibonacci Sequence
+// Problem 2: Fibonacci Sequence toggle explanation
 function toggleFibonacciExplanation() {
     var explanation = document.getElementById("FibonacciExplanation");
+    // Toggle visibility of Fibonacci explanation
     if (explanation.style.display === "none") {
         explanation.style.display = "block";
     } else {
@@ -29,9 +36,10 @@ function toggleFibonacciExplanation() {
     }
 }
 
-// Problem 3: Palindrome
+// Problem 3: Palindrome toggle explanation
 function togglePalindromeExplanation() {
     var explanation = document.getElementById("PalindromicExplanation");
+    // Toggle visibility of Palindrome explanation
     if (explanation.style.display === "none") {
         explanation.style.display = "block";
     } else {
@@ -39,9 +47,20 @@ function togglePalindromeExplanation() {
     }
 }
 
-// Problem 4: Smallest Number
+// This function toggles the visibility of the palindrome explanation
+function toggleExplanation() {
+    var explanation = document.getElementById("PalindromicExplanation");
+    if (explanation.style.display === "none") {
+        explanation.style.display = "block"; // Show the explanation
+    } else {
+        explanation.style.display = "none"; // Hide the explanation
+    }
+}
+
+// Problem 4: Smallest Number toggle explanation
 function toggleSmallestNumberExplanation() {
     var explanation = document.getElementById("SmallestNumberExplanation");
+    // Toggle visibility of Smallest Number explanation
     if (explanation.style.display === "none") {
         explanation.style.display = "block";
     } else {
@@ -49,9 +68,10 @@ function toggleSmallestNumberExplanation() {
     }
 }
 
-// Problem 5: Prime Numbers
+// Problem 5: Prime Numbers toggle explanation
 function togglePrimeNumberExplanation() {
     var explanation = document.getElementById("PrimeNumberExplanation");
+    // Toggle visibility of Prime Number explanation
     if (explanation.style.display === "none") {
         explanation.style.display = "block";
     } else {
@@ -59,9 +79,10 @@ function togglePrimeNumberExplanation() {
     }
 }
 
-// Problem 6: Grid
+// Problem 6: Grid toggle explanation
 function toggleGridExplanation() {
     var explanation = document.getElementById("GridExplanation");
+    // Toggle visibility of Grid explanation
     if (explanation.style.display === "none") {
         explanation.style.display = "block";
     } else {
@@ -69,9 +90,10 @@ function toggleGridExplanation() {
     }
 }
 
-// Problem 7: Triangle
+// Problem 7: Triangle toggle explanation
 function toggleTriangleExplanation() {
     var explanation = document.getElementById("TriangleExplanation");
+    // Toggle visibility of Triangle explanation
     if (explanation.style.display === "none") {
         explanation.style.display = "block";
     } else {
@@ -79,10 +101,27 @@ function toggleTriangleExplanation() {
     }
 }
 
+// Problem 7 
+// Toggle explanation visibility
+function toggleGridExplanation() {
+const explanation = document.getElementById("GridExplanation");
+if (explanation.style.display === "none") {
+    explanation.style.display = "block";
+} else {
+    explanation.style.display = "none";
+}
+}
 
-// This function calculates the sum of multiples of 3 or 5 below the input number
+// PROBLEM SOLVING BELOW
+
+// Problem 1
+// This function calculates the sum of all multiples of 3 or 5 below the given input number.
+// The input is provided by the user.
+// The function initializes a sum variable and iterates through all numbers from 1 to the input - 1.
+// For each number, it checks if it is divisible by 3 or 5 using the modulus operator.
+// If it is divisible, the number is added to the sum.
 function handleSumMultiples() {
-    var input = parseInt(document.getElementById("input1").value); // Get input number
+    var input = parseInt(document.getElementById("input1").value); // For the input we use parseInt() to convert string to interger
     var sum = 0; // Initialize the sum
 
     // Loop through numbers from 1 to input and check if divisible by 3 or 5
@@ -92,12 +131,17 @@ function handleSumMultiples() {
       }
     }
 
-    // Display the result
+    // Display the result 
     document.getElementById("output1").innerText = "Sum of multiples of 3 or 5 below " + input + " is: " + sum;
 }
 
+
+
 // Problem 2: Fibonacci Sequence
-// This function calculates Fibonacci numbers up to a specified count and tracks even numbers
+// This function calculates Fibonacci numbers up to a specified count and tracks the even numbers.
+// It uses a loop to generate the next Fibonacci number by adding the previous two numbers.
+// If a Fibonacci number is even, it is added to the isEven array.
+// The function returns an object containing the full Fibonacci sequence and the even numbers.
 function trackPreviousAndCurrent(count) {
     var previous = 0; // Initialize previous value
     var current = 1; // Initialize current value
@@ -120,7 +164,7 @@ function trackPreviousAndCurrent(count) {
     // Calculate the sum of even Fibonacci numbers
     var totalEvenSum = evenValues.reduce((accumulator, value) => accumulator + value, 0);
 
-    // Return an object with all Fibonacci values, even values, and the sum of even values
+    // Return an object with all Fibonacci values, even values, and the sum of even values to show working out
     return {
       values: values,
       evenValues: evenValues,
@@ -128,13 +172,23 @@ function trackPreviousAndCurrent(count) {
     };
 }
 
-// This function reverses a given number by converting it to a string, splitting, and rejoining
+//Problem 3 Palindrome problem
+
+
+// reverseNumber
+// The input is a number
+// For the logic the function converts the number to a string, splits it into an array of characters,
+// reverses the array, and then joins the characters back together into a string.
+// Then it converts the string back into a number and reutrns in.
 function reverseNumber(num) {
     return parseInt(num.toString().split('').reverse().join(''));
 }
 
-// Palindrome Problem
-// This function calculates the largest palindrome that is a product of two 3-digit numbers
+
+// There's no input
+// For the logic the function loops through all pairs of 3-digit numbers (starting from 999) and multiples them.
+// It then checks if the product is a palindrome using the reverseNumber function located above.
+// If the product is a palindome and greater than the current largest palindrome, it updates the palidrome
 function calculateLargestPalindrome() {
     let steps = document.getElementById("steps");
     steps.innerHTML = ""; // Clear previous steps
@@ -175,15 +229,6 @@ function calculateLargestPalindrome() {
 // This adds a click event listener to trigger the calculation of the largest palindrome
 document.getElementById("calculateButton").addEventListener("click", calculateLargestPalindrome);
 
-// This function toggles the visibility of the palindrome explanation
-function toggleExplanation() {
-    var explanation = document.getElementById("PalindromicExplanation");
-    if (explanation.style.display === "none") {
-        explanation.style.display = "block"; // Show the explanation
-    } else {
-        explanation.style.display = "none"; // Hide the explanation
-    }
-}
 
 // This function displays the result of calculating Fibonacci numbers below 4 million
 function displayResult() {
@@ -194,24 +239,7 @@ function displayResult() {
       "\n\nSum of even Fibonacci numbers: " + result.totalEvenSum;
 }
 
-// Problem 3: Largest Prime Factor
-// This function finds the largest prime factor of a given number (600851475143)
-function largestPrimeFactor() {
-    var number = 600851475143; // The number we need to find the largest prime factor of
-    var factor = 2; // Start checking from 2 (smallest prime number)
-    
-    // Loop until the number becomes 1
-    while (factor * factor <= number) {
-      if (number % factor === 0) {
-        number /= factor; // Divide the number by the factor if it's divisible
-      } else {
-        factor++; // Otherwise, increment the factor to check the next possible prime
-      }
-    }
-    
-    // Display the largest prime factor
-    document.getElementById("output3").innerText = "Largest Prime Factor: " + number;
-}
+
 
 // Problem 4: Smallest number that is evenly divisible by all numbers from 1 to 20
 // This function finds the smallest number that is divisible by all numbers from 1 to 20
@@ -240,7 +268,15 @@ document.getElementById("calculateSmallestNumberButton").addEventListener("click
     document.getElementById("solution4").innerText = "Smallest Multiple: " + smallestNumber; // Display the result
 });
 
-// Problem 4: Prime Numbers Button
+// Problem 5: Largest Prime Factor
+// This function finds the largest prime factor of a given number (600851475143)
+// We start with the number 2 and check for primality for each number by attempting to divide it by all smaller numbers up to its square root.
+// If not divisors are found (i.e., the number if only dividible by 1 and itself), the number is prime and 
+// is added to the primeNumbers array
+// The loop continues until 10,0001 prime numbers are found.
+
+// The user can initiate the prime number calcualtion by clicking a button. 
+// This keeps the user interface clean and only calculates the prime numbers when needed
 function calculatePrimeNumbers() {
     const primeNumbers = [];
     let currentNumber = 2;
@@ -271,7 +307,7 @@ function calculatePrimeNumbers() {
     document.getElementById("solution5").textContent = "The 10001st prime number is: " + primes[10000];
   });
 
-  // Function to compute factorial using BigInt for large numbers
+// Function to compute factorial using BigInt for large numbers
 function calculateFactorial(num) {
   let result = 1n; // BigInt for large numbers
   for (let currentStep = 2n; currentStep <= num; currentStep++) {
@@ -280,12 +316,23 @@ function calculateFactorial(num) {
   return result;
 }
 
+// Problem 6
+// This function calculates the factorial of a give number num using BigInt.
+// Factorial meaning (5! - 5 * 4 * 3 * 1)
+// Because the datatype is going to be large we use BigInt
+// The function uses a simple loop to calculate th factorial.
+
 // Function to compute the binomial coefficient: "n choose k"
 function calculateBinomialCoefficient(totalSteps, stepsInOneDirection) {
   return calculateFactorial(totalSteps) / (calculateFactorial(stepsInOneDirection) * calculateFactorial(totalSteps - stepsInOneDirection));
 }
 
 // Function to calculate and display the number of routes
+// The function calculates the binomial coefficient, which represent the number of different ways to choose a set of
+// stepsInOneDirection steps from a total of totalSteps steps. 
+
+// We use this formula is n! / (k! * (n-k)!). 
+// In this n is the total number of steps (right and down) adn k is the number of steps in one direction
 function calculateGridRoutes() {
   const gridSize = 20;
   const totalSteps = gridSize * 2; // Total steps (20 rights + 20 downs)
@@ -307,6 +354,11 @@ function toggleGridExplanation() {
     explanation.style.display = "none";
   }
 }
+
+// Problem 7
+// This function fetches a triangle of numbers stored in a triangle.txt file, parses the data and
+// tried ot find the maximum path sum from the top to the bottom of the triangle.
+// Instead of recalcuating path repeatedly I tried to buidl of previously computer results
 
 // Function to compute factorial using BigInt for large numbers
 function calculateFactorial(num) {
@@ -335,18 +387,9 @@ function calculateFactorial(num) {
     document.getElementById("routesResult").innerText = `Number of possible routes through a ${gridSize}x${gridSize} grid: ${numberOfRoutes}`;
   }
   
-  // Toggle explanation visibility
-  function toggleGridExplanation() {
-    const explanation = document.getElementById("GridExplanation");
-    if (explanation.style.display === "none") {
-      explanation.style.display = "block";
-    } else {
-      explanation.style.display = "none";
-    }
-  }
   
 
-  // Function to calculate the maximum sum path from the loaded triangle file
+// Function to calculate the maximum sum path from the loaded triangle file
 async function calculateMaxSum() {
     // Fetch the triangle.txt file
     try {
@@ -368,6 +411,9 @@ async function calculateMaxSum() {
 }
 
 // Function to parse the triangle text data into a 2D array
+// To do this we take the raw text data from the triangle.txt fiel, split it into rows, and 
+// convert each one into an array of numebrs.
+// This is done because the triangle is stored as text, so this function was needed to convert it into a format like a 2D array.
 function parseTriangle(data) {
     const rows = data.split('\n');
     const triangle = [];
@@ -392,21 +438,48 @@ function parseTriangle(data) {
 }
 
 // Dynamic programming solution to find the max path sum
+// We start with the second to last row and work upwards, updating each number with the maximum
+// path sum so it could be obtained from that position
+// Therefore it return the maximum sum at the tip.
+
+// I thought it might be better to do it bottom up, becuase then the function can ensure the at each
+// step it already calculated maximum values from the row below
 function calculateMaxPath(triangle) {
     console.log("Triangle before calculation:", triangle);
 
+    // Loop through the triangle starting from the second-to-last row.
+    // This approach uses dynamic programming to calculate the maximum sum path.
+    // We move from bottom to top because each element in a row depends on the two elements below it.
     for (let row = triangle.length - 2; row >= 0; row--) {
-        for (let col = 0; col <= row; col++) {
-            console.log(`Calculating for row ${row}, col ${col}:`, triangle[row + 1][col], triangle[row + 1][col + 1]);
-            triangle[row][col] += Math.max(triangle[row + 1][col], triangle[row + 1][col + 1]);
-            console.log(`Updated value at triangle[${row}][${col}]:`, triangle[row][col]);
+        // Loop through each column (in this case, each element) of the current row.
+        // Each element will be updated with the maximum sum that can be obtained by choosing
+        // the larger of the two adjacent numbers in the row directly below.
+        for (let column = 0; column <= row; column++) {
+
+            // Log the values from the row below that are being considered.
+            // These are the two elements that will contribute to the new value of the current element.
+            console.log(`Calculating for row ${row}, column ${column}:`, triangle[row + 1][column], triangle[row + 1][column + 1]);
+
+            // Update the current element (triangle[row][column]) by adding the maximum of the two adjacent
+            // numbers from the row directly below (triangle[row + 1][column] and triangle[row + 1][column + 1]).
+            // This ensures that we're considering the largest possible sum path.
+            triangle[row][column] += Math.max(triangle[row + 1][column], triangle[row + 1][column + 1]);
+
+            // Log the updated value of the current element after it has been modified.
+            console.log(`Updated value at triangle[${row}][${column}]:`, triangle[row][column]);
         }
     }
 
+    // After processing all rows, the triangle[0][0] will contain the maximum path sum.
     console.log("Final Triangle:", triangle);
+
+    // Return the top element, which is now the maximum sum path from top to bottom.
     return triangle[0][0];
 }
 
+
+
+// OTHER LOGIC
   
 // Tab Switching Logic
 // This function handles the tab switching logic when the user clicks on different tabs

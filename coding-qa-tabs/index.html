@@ -52,12 +52,17 @@
         A <strong>multiple</strong> is a number that can be divided by another number without leaving a remainder.
         <br><br>
         <strong>Steps to Find the Sum of Multiples of 3 or 5:</strong>
-        <br><br>
+        <br>For my code I did try to write a list of instructions before starting to work on it, and these were the instructions below:<br>
+        <br></br>
         <strong>Choose a number:</strong> Pick a number that will serve as the upper limit.
         <br><br>
         <strong>Find multiples of 3 or 5 below that number:</strong> Identify all the numbers below your chosen number that are divisible by 3 or 5.
         <br><br>
         <strong>Sum them together:</strong> Add up all the multiples of 3 or 5 that you identified in step 2.
+        <strong>Problem Solving Notes</strong>
+        <br></br>
+        <img src="./Images/Prob1P1.jpg" alt="Fib Part 1" width="400" height="auto" />
+        <br>
     </p>
   </div>
 
@@ -80,8 +85,15 @@
         <br>Start with 1 and 2, then continue generating the next number by adding the previous two numbers.
         <br>Only consider Fibonacci numbers that are less than or equal to four million.
         <br>Sum all even numbers in the Fibonacci sequence below four million.
+        <br><br>
+        <strong>Problem Solving Notes</strong>
+        <br></br>
+        <img src="./Images/FibP1.jpg" alt="Fib Part 1" width="400" height="auto" />
+        <br>
+        <img src="./Images/FibP2.jpg" alt="Fib Part 2" width="400" height="auto" />
     </p>
-
+    
+    
     <button onclick="displayResult()">Calculate Sum of Even Fibonacci Numbers</button>
     <pre><code id="output"></code></pre>
   </div>
@@ -103,14 +115,19 @@
         <strong>Steps to Solve the Problem:</strong>
         <br>Start with the product of two 3-digit numbers and check if the product is a palindrome.
         <br>Keep track of the largest palindrome found, and continue checking smaller products until you've considered all possibilities.
+        <strong>Problem Solving Notes</strong>
+        <br></br>
+        <img src="./Images/PalP1.jpg" alt="Fib Part 1" width="400" height="auto" />
+        <br>
+        <img src="./Images/PalP2.jpg" alt="Fib Part 2" width="400" height="auto" />
     </p>
   
     <button id="calculateButton">Calculate the Largest Palindrome</button>
     <p id="solution" style="font-weight: bold;"></p>
-    <div id="steps"></div> <!-- Optional step display -->
+    <div id="steps"></div>
   </div>
 
-  <!-- Problem 4 -->
+  <!-- Problem 4: Smallest Number -->
   <div class="tab-content" id="problem4">
     <h2>Smallest number</h2>
     <p>
@@ -134,7 +151,7 @@
     </p>
   </div>
 
-  <!-- Problem 5 -->
+  <!-- Problem 5: Prime NUmbers -->
   <div class="tab-content" id="problem5">
     <h2>Prime Numbers</h2>
     <p>
@@ -155,7 +172,7 @@
     </p>
   </div>
 
-  <!-- Problem 6 -->
+  <!-- Problem 6: Grid -->
 <div class="tab-content" id="problem6">
     <h2>Grid</h2>
     <p>
@@ -171,6 +188,11 @@
       <br><br>
       <strong>Steps to Solve:</strong>
       <br>Calculate the number of combinations of right and down movements required to get from the top left to the bottom right of a grid.
+      <strong>Problem Solving Notes</strong>
+        <br></br>
+        <img src="./Images/Prob6P1.jpg" alt="Fib Part 1" width="400" height="auto" />
+        <br>
+        <img src="./Images/Prob6P2.jpg" alt="Fib Part 2" width="400" height="auto" />
     </p>
   
     <!-- Button to trigger the solution calculation -->
@@ -181,7 +203,7 @@
   </div>
   
 
- <!-- Problem 7 -->
+ <!-- Problem 7: Trangle -->
 <div class="tab-content" id="problem7">
     <h2>Triangle</h2>
     <p>
@@ -197,6 +219,9 @@
         <br><br>
         <strong>Steps to Solve:</strong>
         <br>Start from the top of the triangle and for each number, select the largest possible path down to the base.
+        <br> I started from the last row, and I'm not sure if that is allowed but I've showed my thinking in the script.txt with comments</br>
+        <strong>Things to think about</strong>
+        <br>This does take slightly longer to load than other questions, so it would be good to thing about the time complixity in future</br>
     </p>
 
     <!-- Button to calculate the maximum path sum -->
