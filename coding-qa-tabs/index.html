@@ -156,30 +156,37 @@
   </div>
 
   <!-- Problem 6 -->
-  <div class="tab-content" id="problem6">
+<div class="tab-content" id="problem6">
     <h2>Grid</h2>
     <p>
       <strong>Problem:</strong> Starting at the top left corner of a 2x2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom corner.
       How many routes are there through a 20x20 grid?
     </p>
-
+  
     <button id="toggleButton6" onclick="toggleGridExplanation()">What is the Grid Problem?</button>
-
+  
     <p id="GridExplanation" style="display: none;">
-        <strong>Grid Pathways:</strong>
-        <br>The problem is a classic combinatorics problem, where you are asked to find the number of different routes from one corner of a grid to the opposite corner.
-        <br><br>
-        <strong>Steps to Solve:</strong>
-        <br>Calculate the number of combinations of right and down movements required to get from the top left to the bottom right of a grid.
+      <strong>Grid Pathways:</strong>
+      <br>The problem is a classic combinatorics problem, where you are asked to find the number of different routes from one corner of a grid to the opposite corner.
+      <br><br>
+      <strong>Steps to Solve:</strong>
+      <br>Calculate the number of combinations of right and down movements required to get from the top left to the bottom right of a grid.
     </p>
+  
+    <!-- Button to trigger the solution calculation -->
+    <button id="calculateRoutesButton" onclick="calculateGridRoutes()">Calculate Routes</button>
+    
+    <!-- Display the result here -->
+    <p id="routesResult"></p>
   </div>
+  
 
-  <!-- Problem 7 -->
-  <div class="tab-content" id="problem7">
+ <!-- Problem 7 -->
+<div class="tab-content" id="problem7">
     <h2>Triangle</h2>
     <p>
-      <strong>Problem:</strong> By starting at the top of the triangle below and moving to adjacent numbers in the row below, the maximum total from top to bottom is 23.
-      Find the maximum total from top to bottom in triangle.txt, a text file containing a triangle with one-hundred rows.
+        <strong>Problem:</strong> By starting at the top of the triangle below and moving to adjacent numbers in the row below, the maximum total from top to bottom is 23.
+        Find the maximum total from top to bottom in triangle.txt, a text file containing a triangle with one-hundred rows.
     </p>
 
     <button id="toggleButton7" onclick="toggleTriangleExplanation()">What is the Triangle Problem?</button>
@@ -191,7 +198,13 @@
         <strong>Steps to Solve:</strong>
         <br>Start from the top of the triangle and for each number, select the largest possible path down to the base.
     </p>
-  </div>
+
+    <!-- Button to calculate the maximum path sum -->
+    <button id="calculateButton" onclick="calculateMaxSum()">Calculate Maximum Path Sum</button>
+
+    <h3>Maximum Path Sum: <span id="result">-</span></h3>
+</div>
+
 
   <script src="script.js"></script>
 </body>

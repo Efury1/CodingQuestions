@@ -15,7 +15,7 @@ Smallest Multiple: 232792560
 
 Problem 5: Smallest Multiple: 232792560
 
-Problem 6: 
+Problem 6: 20x20 grid: 137846528820
 
 Problem 7: 
 

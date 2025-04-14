@@ -270,6 +270,143 @@ function calculatePrimeNumbers() {
     const primes = calculatePrimeNumbers();
     document.getElementById("solution5").textContent = "The 10001st prime number is: " + primes[10000];
   });
+
+  // Function to compute factorial using BigInt for large numbers
+function calculateFactorial(num) {
+  let result = 1n; // BigInt for large numbers
+  for (let currentStep = 2n; currentStep <= num; currentStep++) {
+    result *= currentStep;
+  }
+  return result;
+}
+
+// Function to compute the binomial coefficient: "n choose k"
+function calculateBinomialCoefficient(totalSteps, stepsInOneDirection) {
+  return calculateFactorial(totalSteps) / (calculateFactorial(stepsInOneDirection) * calculateFactorial(totalSteps - stepsInOneDirection));
+}
+
+// Function to calculate and display the number of routes
+function calculateGridRoutes() {
+  const gridSize = 20;
+  const totalSteps = gridSize * 2; // Total steps (20 rights + 20 downs)
+  const stepsInOneDirection = gridSize; // 20 rights or 20 downs
+
+  // Calculate the number of routes using the binomial coefficient
+  const numberOfRoutes = calculateBinomialCoefficient(totalSteps, stepsInOneDirection);
+
+  // Display the result in the HTML
+  document.getElementById("routesResult").innerText = `Number of possible routes through a ${gridSize}x${gridSize} grid: ${numberOfRoutes}`;
+}
+
+// Toggle explanation visibility
+function toggleGridExplanation() {
+  const explanation = document.getElementById("GridExplanation");
+  if (explanation.style.display === "none") {
+    explanation.style.display = "block";
+  } else {
+    explanation.style.display = "none";
+  }
+}
+
+// Function to compute factorial using BigInt for large numbers
+function calculateFactorial(num) {
+    let result = 1n; // BigInt for large numbers
+    for (let currentStep = 2n; currentStep <= num; currentStep++) {
+      result *= currentStep;
+    }
+    return result;
+  }
+  
+  // Function to compute the binomial coefficient: "n choose k"
+  function calculateBinomialCoefficient(totalSteps, stepsInOneDirection) {
+    return calculateFactorial(totalSteps) / (calculateFactorial(stepsInOneDirection) * calculateFactorial(totalSteps - stepsInOneDirection));
+  }
+  
+  // Function to calculate and display the number of routes
+  function calculateGridRoutes() {
+    const gridSize = 20;
+    const totalSteps = gridSize * 2; // Total steps (20 rights + 20 downs)
+    const stepsInOneDirection = gridSize; // 20 rights or 20 downs
+  
+    // Calculate the number of routes using the binomial coefficient
+    const numberOfRoutes = calculateBinomialCoefficient(totalSteps, stepsInOneDirection);
+  
+    // Display the result in the HTML
+    document.getElementById("routesResult").innerText = `Number of possible routes through a ${gridSize}x${gridSize} grid: ${numberOfRoutes}`;
+  }
+  
+  // Toggle explanation visibility
+  function toggleGridExplanation() {
+    const explanation = document.getElementById("GridExplanation");
+    if (explanation.style.display === "none") {
+      explanation.style.display = "block";
+    } else {
+      explanation.style.display = "none";
+    }
+  }
+  
+
+  // Function to calculate the maximum sum path from the loaded triangle file
+async function calculateMaxSum() {
+    // Fetch the triangle.txt file
+    try {
+        const response = await fetch('triangle.txt'); // This assumes the file is in the same directory
+        if (!response.ok) {
+            throw new Error('Failed to load triangle.txt');
+        }
+        const data = await response.text();
+        const triangle = parseTriangle(data);
+        
+        // Calculate the maximum path sum using dynamic programming
+        const maxSum = calculateMaxPath(triangle);
+        
+        // Display the result
+        document.getElementById('result').textContent = maxSum;
+    } catch (error) {
+        alert('Error loading the triangle file: ' + error.message);
+    }
+}
+
+// Function to parse the triangle text data into a 2D array
+function parseTriangle(data) {
+    const rows = data.split('\n');
+    const triangle = [];
+
+    for (let row of rows) {
+        row = row.trim();
+        if (row === "") continue;
+        
+        const numbers = row.split(' ').map(num => {
+            const parsedNum = parseInt(num, 10);
+            if (isNaN(parsedNum)) {
+                console.error(`Invalid number in row: ${row}`);
+            }
+            return parsedNum;
+        });
+
+        triangle.push(numbers);
+    }
+
+    console.log("Parsed Triangle:", triangle);
+    return triangle;
+}
+
+// Dynamic programming solution to find the max path sum
+function calculateMaxPath(triangle) {
+    console.log("Triangle before calculation:", triangle);
+
+    for (let row = triangle.length - 2; row >= 0; row--) {
+        for (let col = 0; col <= row; col++) {
+            console.log(`Calculating for row ${row}, col ${col}:`, triangle[row + 1][col], triangle[row + 1][col + 1]);
+            triangle[row][col] += Math.max(triangle[row + 1][col], triangle[row + 1][col + 1]);
+            console.log(`Updated value at triangle[${row}][${col}]:`, triangle[row][col]);
+        }
+    }
+
+    console.log("Final Triangle:", triangle);
+    return triangle[0][0];
+}
+
   
 // Tab Switching Logic
 // This function handles the tab switching logic when the user clicks on different tabs
